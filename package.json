@@ -1,0 +1,17 @@
+{
+  "name": "FDMZ17",
+  "version": "1.0.0",
+  "description": "Thank you for using my code, i hope you enjoy",
+  "main": "index.js",
+  "dependencies": {
+    "ascii-table": "0.0.9",
+    "discord.js": "^13.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "FDMZ17",
+  "license": "ISC"
+}
