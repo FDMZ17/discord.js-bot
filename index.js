@@ -1,11 +1,15 @@
-const config = require("./prefix.json");
-const token = require("./token.json");
-const discord = require('discord.js');
+const request = require('request');
 const fs = require('fs');
+const discord = require('discord.js');
+const config = require("./config.json");
+const db = require("quick.db");
 const client = new discord.Client();
 client.commands = new discord.Collection();
+const express = require('express');
+const app = express();
+const port = 2323;
 
-//===============================================
+//-----------------------------------------------
 
 client.commands = new discord.Collection();
 client.aliases = new discord.Collection();
@@ -42,9 +46,9 @@ client.on('message', async message => {
 	try {
 		client.commands.get(cmd);
 		client.channels.cache
-			.get('Channel_Logs_ID')
+			.get('883257985294557195')
 			.send(
-				`**Logs ${message.guild.name}**: ${message.author.tag} used (**${
+				`**[Logs] ${message.guild.name}**: ${message.author.tag} used (**${
 					client.commands.get(cmd).name
 	 }) ${message}**`
 			);
@@ -77,7 +81,7 @@ client.on('message', async message => {
 
 async function xp(message) {
     let prefix = await db.get(`prefix_${message.guild.id}`)
-    if(prefix === null) prefix = 'f!'
+    if(prefix === null) prefix = '!'
     if(message.content.startsWith(prefix)) return;
     const randomNumber = Math.floor(Math.random() * 1) + 5
     db.add(`guild_${message.guild.id}_xp_${message.author.id}`, randomNumber)
@@ -89,15 +93,23 @@ async function xp(message) {
     if(xpNeeded < xp) {
         var newLevel = db.add(`guild_${message.guild.id}_level_${message.author.id}`, 1)
         db.subtract(`guild_${message.guild.id}_xp_${message.author.id}`, xpNeeded)
-        message.channel.send(`Congrats ${message.author}, you have levelled up to Level ${newLevel}`)
+        message.channel.send(`Congrats ${message.author}, you levelled up to Level ${newLevel}`)
     }
 }
 
 
-client.login(token.token);
+
+
+client.login(config.token)
+
+
+app.listen(port, () => console.log(`http://localhost:0001`));
 
 client.on("ready", () => {
     console.log(`Hi, ${client.user.username} is now online!`);
-	console.log(`This bot used on ${client.guilds.cache.size} servers and ${client.users.cache.size} users`)
+
     client.user.setActivity("!help",{type: "WATCHING"}) 
+
+    console.log(`Bot is online and running in ${client.guilds.cache.size} servers!, for ${client.users.cache.size}user`)
+
 })
