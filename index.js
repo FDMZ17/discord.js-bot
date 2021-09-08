@@ -5,9 +5,6 @@ const config = require("./config.json");
 const db = require("quick.db");
 const client = new discord.Client();
 client.commands = new discord.Collection();
-const express = require('express');
-const app = express();
-const port = 2323;
 
 //-----------------------------------------------
 
@@ -101,9 +98,6 @@ async function xp(message) {
 
 
 client.login(config.token)
-
-
-app.listen(port, () => console.log(`http://localhost:0001`));
 
 client.on("ready", () => {
     console.log(`Hi, ${client.user.username} is now online!`);
