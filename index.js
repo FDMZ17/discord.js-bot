@@ -43,7 +43,7 @@ client.on('message', async message => {
 	try {
 		client.commands.get(cmd);
 		client.channels.cache
-			.get('883257985294557195')
+			.get(config.logs)
 			.send(
 				`**[Logs] ${message.guild.name}**: ${message.author.tag} use (**${
 					client.commands.get(cmd).name

@@ -4,6 +4,7 @@ const { MessageAttachment } = require('discord.js')
 
 module.exports = {
     name: 'level',
+    aliases: ["lvl"],
     description: 'Show your current level',
     usage: 'level',
     run: async(client, message, args) => {
