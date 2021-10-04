@@ -14,14 +14,14 @@ module.exports = {
       .setDescription(
         `
 
-**Ex:**
-\`Example1\`
+**Info**
+\`help, ping, invite\`
 
-**Ex:**
-\`Example2\`
+**Leveling:**
+\`level/lvl\`
 
-**Ex:**
-\`Example3\`
+**Setting:**
+\`setprefix/prefix\`
 
 `
       )
