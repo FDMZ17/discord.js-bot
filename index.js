@@ -40,18 +40,6 @@ client.on('message', async message => {
 	// If a command is finally found, run the command
 	if (command) command.run(client, message, args);
 
-	try {
-		client.commands.get(cmd);
-		client.channels.cache
-			.get(config.logs)
-			.send(
-				`**[Logs] ${message.guild.name}**: ${message.author.tag} use (**${
-					client.commands.get(cmd).name
-	 }) ${message}**`
-			);
-	} catch (err) {
-		console.log(err);
-	}
 }); 
 
 
