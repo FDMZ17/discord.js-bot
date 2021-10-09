@@ -1,7 +1,6 @@
 const request = require('request');
 const fs = require('fs');
 const discord = require('discord.js');
-const db = require("quick.db");
 const client = new discord.Client();
 client.commands = new discord.Collection();
 client.setting = require('./setting');
