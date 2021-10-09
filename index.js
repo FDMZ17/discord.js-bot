@@ -5,6 +5,8 @@ const config = require("./config.json");
 const db = require("quick.db");
 const client = new discord.Client();
 client.commands = new discord.Collection();
+client.setting = require('./setting');
+const prefix = client.setting.bot.prefix;
 
 //-----------------------------------------------
 
@@ -85,12 +87,14 @@ async function xp(message) {
 
 
 
+
 client.login(config.token)
 
 client.on("ready", () => {
     console.log(`Hi, ${client.user.username} is now online!`);
 
-    client.user.setActivity("!help",{type: "WATCHING"}) 
+    client.user.setActivity(client.setting.bot.status,{type: client.setting.bot.statustype});
+
 
     console.log(`Bot is online and running in ${client.guilds.cache.size} servers!, for ${client.users.cache.size}user`)
 
