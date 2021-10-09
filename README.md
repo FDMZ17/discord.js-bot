@@ -1,5 +1,5 @@
 # Discord.JS-Template
-> My first template for discord.js bot
+> My first template for discord.js bot [v2.0]
 
 # Setup
 Run ```npm install``` command after download or forking
