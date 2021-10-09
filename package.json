@@ -1,21 +1,18 @@
 {
-  "name": "FDMZ17",
-  "version": "1.0.0",
-  "description": "Thank you for using my code, i hope you enjoy",
+  "name": "discord.js-bot",
   "main": "index.js",
-  "dependencies": {
-    "ascii-table": "0.0.9",
-    "canvacord": "^5.2.3",
-    "discord.js": "12.5.3",
-    "express": "^4.17.1",
-    "quick.db": "^7.1.3",
-    "request": "^2.88.2"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
   "author": "FDMZ17",
-  "license": "ISC"
+  "version": "2.0.0",
+  "repository": "https://github.com/FDMZ17/discord.js-bot.git",
+  "description": "A simple discord.js bot template",
+  "scripts": {
+    "start": "node index.js"
+  },
+    "dependencies": {
+      "ascii-table": "0.0.9",
+      "canvacord": "^5.2.3",
+      "discord.js": "12.5.3",
+      "quick.db": "^7.1.3",
+      "request": "^2.88.2"
+  }
 }
