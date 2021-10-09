@@ -5,7 +5,7 @@ module.exports = {
   run: async (client, message, args) => {
     const embed = new discord.MessageEmbed()
             .setTitle("Invite:")
-            .setDescription(`[Click to invite me](https://discordapp.com/oauth2/authorize?client_id=${client.setting.bot.botid}&scope=bot)
+            .setDescription(`[Click to invite me](https://discordapp.com/oauth2/authorize?client_id=${client.setting.invite.botid}&scope=bot)
             
              \Used on **${client.guilds.cache.size}** server\
              
