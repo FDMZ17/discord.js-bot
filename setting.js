@@ -5,7 +5,7 @@ module.exports = {
     },
 
      invite: {
-         botid: '0000000000000000'
+         botid: '00000000000000000'
      },
 
      status: {
