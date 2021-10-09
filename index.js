@@ -86,7 +86,7 @@ async function xp(message) {
 
 
 
-client.login(config.token)
+client.login(client.setting.bot.token);
 
 client.on("ready", () => {
     console.log(`Hi, ${client.user.username} is now online!`);
