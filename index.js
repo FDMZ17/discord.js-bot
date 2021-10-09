@@ -92,7 +92,7 @@ client.login(config.token)
 client.on("ready", () => {
     console.log(`Hi, ${client.user.username} is now online!`);
 
-    client.user.setActivity(client.setting.bot.status,{type: client.setting.bot.statustype});
+    client.user.setActivity(client.setting.status.status,{type: client.setting.status.statustype});
 
 
     console.log(`Bot is online and running in ${client.guilds.cache.size} servers!, for ${client.users.cache.size}user`)

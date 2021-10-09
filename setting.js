@@ -1,10 +1,17 @@
 module.exports = {
     bot: {
         token: 'xxxxxxx.xxxxxxxxxxx.xxxxxxxxxxxxx',
-        prefix: '!',
-        invitebotid: '0000000000000000',
-        status: '!help',
-        statustype: 'WATCHING'
+        prefix: '!'
     },
+
+     invite: {
+         botid: '0000000000000000'
+     },
+
+     status: {
+         status: '!help',
+         statustype: 'WATCHING'
+     }
+
 
 };
