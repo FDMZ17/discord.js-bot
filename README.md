@@ -8,6 +8,25 @@ Put your discord bot token and prefix at ```setting.js```
 
 *default prefix is ```!```
 
+```javascript
+module.exports = {
+    bot: {
+        token: 'xxxxxxx.xxxxxxxxxxx.xxxxxxxxxxxxx',
+        prefix: '!'
+    },
+
+     invite: {
+         botid: '00000000000000000'
+     },
+
+     status: {
+         status: '!help',
+         statustype: 'WATCHING'
+     }
+
+}; 
+```
+
 # Do not claim this code as your code
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
