@@ -62,7 +62,6 @@ client.on('message', async message => {
 
     const cmd = client.commands.get(command)
     if(cmd) cmd.run(client, message, args)
-
 })
 
 async function xp(message) {
