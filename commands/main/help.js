@@ -8,7 +8,6 @@ module.exports = {
         .setTitle('Main')
         .addField('help', 'Show this menu')
         .addField('ping', 'Ping between bot and server')
-        .addField('prefix', 'Set your bot prefix *per server')
         .setColor('#2e3137')
         .setTimestamp()
         const page2 = new Discord.MessageEmbed()
