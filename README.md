@@ -4,7 +4,7 @@
 # Setup
 Run ```npm install``` command after download or forking
 
-Put your discord bot token and prefix at ```config.json```
+Put your discord bot token and prefix at ```setting.js```
 
 *default prefix is ```!```
 
