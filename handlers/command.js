@@ -20,7 +20,6 @@ module.exports = (client) => {
                 table.addRow(file, `🔴`);
                 continue;
             }
-    
           
             if (pull.aliases && Array.isArray(pull.aliases)) pull.aliases.forEach(alias => client.aliases.set(alias, pull.name));
         }
