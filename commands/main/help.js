@@ -11,6 +11,15 @@ module.exports = {
         .setColor('#2e3137')
         .setTimestamp()
         const page2 = new Discord.MessageEmbed()
+        .setTitle('Math')
+        .addField('+', '100+100=')
+        .addField('-', '100-50=')
+        .addField('*', '100 x 100=')
+        .addField('÷', '100 ÷ 2=')
+        .addField('pi', 'Calculate the value of pi')
+        .setColor('#2e3137')
+        .setTimestamp()
+        const page3 = new Discord.MessageEmbed()
         .setTitle('Your cmd')
         .addField('cmd', 'desc')
         .addField('cmd', 'desc')
@@ -18,7 +27,8 @@ module.exports = {
         .setTimestamp()
         const pages = [
                 page1,
-                page2
+                page2,
+                page3
         ]
         const emojiList = ["◀️", "▶️"];
         const timeout = '120000';
