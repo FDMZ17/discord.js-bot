@@ -1,4 +1,3 @@
-const request = require('request');
 const fs = require('fs');
 const db = require("quick.db");
 const discord = require('discord.js');
