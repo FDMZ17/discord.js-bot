@@ -1,7 +1,8 @@
 module.exports = {
     bot: {
         token: 'xxxxxxx.xxxxxxxxxxx.xxxxxxxxxxxxx',
-        prefix: '!'
+        prefix: '!',
+        botVer: 'v3.0'
     },
 
      invite: {

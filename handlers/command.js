@@ -1,7 +1,9 @@
 const { readdirSync } = require("fs");
+
 const ascii = require("ascii-table");
-let table = new ascii("Commands");
-table.setHeading("name", "load status");
+
+let table = new ascii("loader");
+table.setHeading("command", "load status");
 
 module.exports = (client) => {
     
@@ -20,10 +22,11 @@ module.exports = (client) => {
                 table.addRow(file, `🔴`);
                 continue;
             }
+    
           
             if (pull.aliases && Array.isArray(pull.aliases)) pull.aliases.forEach(alias => client.aliases.set(alias, pull.name));
         }
     });
-   
+   console.clear();
     console.log(table.toString());
 }
