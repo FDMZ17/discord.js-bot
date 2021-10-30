@@ -1,5 +1,6 @@
 # Discord.JS-Template
 > My template for discord.js bot [v2.0]
+> My DiscordJS bot: https://urlsh.repl.co/fdmz17bot
 
 # Setup
 Run ```npm install``` command after download or forking
@@ -39,3 +40,4 @@ Please make sure to update tests as appropriate.
 
 # Discord
 > FDMZ17#4616
+
