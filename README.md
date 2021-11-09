@@ -14,7 +14,7 @@ Put your discord bot token and prefix at ```setting.js```
 module.exports = {
     bot: {
         token: 'xxxxxxx.xxxxxxxxxxx.xxxxxxxxxxxxx',
-        prefix: '!'
+        prefix: '!',
         botVer: 'v3.0'
     },
 
