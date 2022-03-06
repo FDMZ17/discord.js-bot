@@ -1,10 +1,13 @@
-const fs = require('fs');
-const db = require("quick.db");
 const discord = require('discord.js');
 const client = new discord.Client();
 client.commands = new discord.Collection();
+
+const express = require('express');
+const app = express();
+const port = 2323;
 client.setting = require('./setting');
 const prefix = client.setting.bot.prefix;
+
 
 //-----------------------------------------------
 
@@ -18,7 +21,7 @@ client.aliases = new discord.Collection();
 client.on('message', async message => {
 	if (message.author.bot) return;
 	if (!message.guild) return;
-	
+
 	if (!message.content.startsWith(prefix)) return;
 
 	if (!message.member)
@@ -40,29 +43,33 @@ client.on('message', async message => {
 	// If a command is finally found, run the command
 	if (command) command.run(client, message, args);
 
-}); 
-
-
-
-		
-client.on('ready', () => {
-	
-
-	console.log('Online.');
 });
 
 
 
 
 
+client.on('ready', () => {
+
+
+	console.log('Online.');
+});
+
+
 client.login(client.setting.bot.token);
+app.listen(port, () => console.log(`http://localhost:${port}`));
+app.get('/', (req, res) => {
+	res.send('FDMZ17 DiscordJS Bot')
+});
 
 client.on("ready", () => {
-    console.log(`Hi, ${client.user.username} is now online!`);
+	console.log(`Hi, ${client.user.username} is now online!`);
 
-    client.user.setActivity(client.setting.status.status,{type: client.setting.status.statustype});
+	client.user.setActivity(client.setting.bot.status, {
+		type: client.setting.bot.statustype
+	});
 
-
-    console.log(`Bot is online and running in ${client.guilds.cache.size} servers!, for ${client.users.cache.size}user`)
+	console.log(`Bot is online and running in ${client.guilds.cache.size} servers!, for ${client.users.cache.size} user!`)
 
 })
+console.log(process.version)

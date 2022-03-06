@@ -2,11 +2,12 @@ const {
     MessageEmbed
 } = require('discord.js');
 const djsGames = require('djs-games')
-const SnakeGame = new djsGames.SnakeGame()
+const guessTheNumber = new djsGames.GuessTheNumber()
+
 
 module.exports = {
-    name: 'snake',
-    aliases: ['snk'],
+    name: 'guess-number',
+    aliases: ['gsn'],
     categories: 'discord_games',
     description: '',
     run: async (client, message, args) => {
@@ -21,9 +22,8 @@ module.exports = {
                 timeout: 5000
             })
             setTimeout(() => {
-                SnakeGame.startGame(message)
+                guessTheNumber.startGame(message)
             }, 5000);
         })
-
     }
 }

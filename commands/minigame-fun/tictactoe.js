@@ -2,14 +2,15 @@ const {
     MessageEmbed
 } = require('discord.js');
 const djsGames = require('djs-games')
-const SnakeGame = new djsGames.SnakeGame()
+const TicTacToe = new djsGames.TicTacToe()
 
 module.exports = {
-    name: 'snake',
-    aliases: ['snk'],
+    name: 'tictactoe',
+    aliases: ['ttt'],
     categories: 'discord_games',
     description: '',
     run: async (client, message, args) => {
+        const user = message.mentions.users.first()
         message.channel.send(
             new MessageEmbed()
             .setColor("GREEN")
@@ -20,10 +21,19 @@ module.exports = {
             msg.delete({
                 timeout: 5000
             })
+            if (!user) return message.channel.send(
+                new MessageEmbed()
+                .setTitle(`Please Mention Your Friend To Play Game.`)
+            ).then(hehe => {
+                hehe.delete({
+                    timeout: 5000
+                })
+            })
             setTimeout(() => {
-                SnakeGame.startGame(message)
+                TicTacToe.startGame(message)
             }, 5000);
         })
+
 
     }
 }

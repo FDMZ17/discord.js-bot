@@ -2,11 +2,11 @@ const Discord = require('discord.js');
 const math = require('mathjs');
 
 module.exports = {
-		name: 'calculate',
-		aliases: ['calc', 'calculator', 'c'],
-		category: 'utility',
-		description: "Shows Calculated Answers Of User's Query",
-		usage: 'calc [query](mathematical)',
+	name: 'calculate',
+	aliases: ['calc', 'calculator', 'c'],
+	category: 'utility',
+	description: "Shows Calculated Answers Of User's Query",
+	usage: 'calc [query](mathematical)',
 	run: async (bot, message, args) => {
 		if (!args[0])
 			return message.channel.send('**Enter Something To Calculate**');
@@ -15,10 +15,10 @@ module.exports = {
 		try {
 			result = math.evaluate(
 				args
-					.join(' ')
-					.replace(/[x]/gi, '*')
-					.replace(/[,]/g, '.')
-					.replace(/[÷]/gi, '/')
+				.join(' ')
+				.replace(/[x]/gi, '*')
+				.replace(/[,]/g, '.')
+				.replace(/[÷]/gi, '/')
 			);
 		} catch (e) {
 			return message.channel.send(
@@ -30,7 +30,9 @@ module.exports = {
 			.setColor('GREEN')
 			.setAuthor(
 				`${bot.user.username} Calculator`,
-				message.author.displayAvatarURL({ dynamic: true })
+				message.author.displayAvatarURL({
+					dynamic: true
+				})
 			)
 			.addField(
 				'**Operation**',
